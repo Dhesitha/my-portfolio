@@ -326,3 +326,28 @@ footer {
     padding: 40px 0;
     margin-top: 50px;
 }
+
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --primary-color: #3498db;
+}
+
+/* Dark Mode Colors */
+.dark-theme {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s;
+}
+
+.card, .skill-card, .contact-form {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color);
+}
