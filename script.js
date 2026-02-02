@@ -9,3 +9,11 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll('.card');
 hiddenElements.forEach((el) => observer.observe(el));
+
+
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+       
+        window.location.reload();
+    }
+});
