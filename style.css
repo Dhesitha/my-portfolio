@@ -257,3 +257,14 @@ footer {
         border-radius: 50%;
     }
 }
+
+#typed {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* ටයිප් කරන cursor එකේ මෝස්තරය */
+.typed-cursor {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
