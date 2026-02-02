@@ -32,26 +32,33 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Dark Mode Toggle
-const toggleBtn = document.getElementById("dark-mode-toggle");
-const currentTheme = localStorage.getItem("theme");
+// Dark Mode Toggle (Default: Dark)
+const toggleBtn = document.getElementById('dark-mode-toggle');
+const currentTheme = localStorage.getItem('theme');
 
-if (currentTheme === "dark") {
-  document.body.classList.add("dark-theme");
-  if (toggleBtn) toggleBtn.classList.replace("fa-moon", "fa-sun");
+// 1. මුලින්ම ලෝඩ් වෙද්දී Dark Mode එක දාන්න (කලින් Light Mode තෝරාගෙන නැත්නම්)
+if (currentTheme === null || currentTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+    if(toggleBtn) toggleBtn.classList.replace('fa-moon', 'fa-sun');
+} else {
+    document.body.classList.remove('dark-theme');
+    if(toggleBtn) toggleBtn.classList.replace('fa-sun', 'fa-moon');
 }
 
+// 2. Button එක එබූ විට මාරු කිරීම
 if (toggleBtn) {
-  toggleBtn.onclick = function () {
-    document.body.classList.toggle("dark-theme");
-    let theme = "light";
-    if (document.body.classList.contains("dark-theme")) {
-      theme = "dark";
-      this.classList.replace("fa-moon", "fa-sun");
-    } else {
-      this.classList.replace("fa-sun", "fa-moon");
+    toggleBtn.onclick = function() {
+        document.body.classList.toggle('dark-theme');
+        let theme = 'light';
+        
+        if (document.body.classList.contains('dark-theme')) {
+            theme = 'dark';
+            this.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            this.classList.replace('fa-sun', 'fa-moon');
+        }
+        localStorage.setItem('theme', theme);
     }
-    localStorage.setItem("theme", theme);
-  };
 }
 
 window.onpageshow = function (event) {

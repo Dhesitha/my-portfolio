@@ -25,6 +25,8 @@ body {
     color: var(--text);
     transition: 0.3s;
     overflow-x: hidden;
+    /* background-color: #121212; /* Dark background */
+    /* color: #e0e0e0; */ 
 }
 
 /* Dark mode එකේදී අකුරු සුදු වීමට */
@@ -87,8 +89,24 @@ nav ul li a {
 }
 
 .section-title {
-    margin-bottom: 40px;
-    font-size: 2rem;
+    /* margin-bottom: 40px;
+    font-size: 2rem; */
+    text-align: center;
+    margin: 60px auto 40px; /* උඩින් සහ යටින් ඉඩ තැබීමට */
+    font-size: 2.5rem;
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    margin: 10px auto;
+    border-radius: 2px;
 }
 
 .project-grid {
@@ -320,4 +338,40 @@ footer {
 .feature-card p {
     font-size: 0.95rem;
     line-height: 1.6;
+}
+
+.tech-stack {
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech {
+    background: rgba(52, 152, 219, 0.2);
+    color: var(--primary);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+    transform: translateX(5px);
+}
+
+.highlight-card {
+    border: 2px solid var(--primary) !important;
+    background: rgba(52, 152, 219, 0.05) !important;
 }
