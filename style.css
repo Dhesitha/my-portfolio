@@ -1,3 +1,4 @@
+/* මූලික සැකසුම් (Global Styles) */
 * {
     margin: 0;
     padding: 0;
@@ -5,18 +6,38 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+:root {
+    --primary-color: #3498db;
+    --dark-color: #2c3e50;
+    --bg-color: #f8f9fa;
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --transition: all 0.3s ease;
 }
 
+/* Dark Mode වර්ණ පද්ධතිය */
+.dark-theme {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --dark-color: #000000;
+}
+
+html, body {
+    overflow-x: hidden; /* Animations වලදී සයිට් එක පැත්තට පැන්නීම වළක්වයි */
+    scroll-behavior: smooth;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+/* Navigation Bar */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 10%;
-    background: #2c3e50;
+    background: var(--dark-color);
     color: white;
     position: sticky;
     top: 0;
@@ -26,6 +47,7 @@ nav {
 nav ul {
     display: flex;
     list-style: none;
+    align-items: center;
 }
 
 nav ul li {
@@ -38,6 +60,7 @@ nav ul li a {
     font-weight: bold;
 }
 
+/* Hero Section */
 .hero {
     height: 80vh;
     display: flex;
@@ -47,83 +70,6 @@ nav ul li a {
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     color: white;
-}
-
-.hero h1 span {
-    color: #3498db;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 25px;
-    background: #3498db;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.section-title {
-    text-align: center;
-    margin: 40px 0;
-    font-size: 2rem;
-}
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 0 10%;
-    margin-bottom: 50px;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-.tech {
-    display: inline-block;
-    margin-top: 10px;
-    background: #e1e1e1;
-    padding: 2px 10px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #2c3e50;
-    color: white;
-}
-
-/* පරණ CSS එකේ ඉතුරු ටික තියෙන්න දීලා මේ කොටස් විතරක් Update කරන්න */
-
-:root {
-    --primary: #3498db;
-    --dark: #2c3e50;
-    --light: #ecf0f1;
-    --transition: all 0.3s ease;
-}
-
-body {
-    background-color: #f8f9fa; /* හිතට සහනයක් දෙන අලුත් background එකක් */
-}
-
-/* Profile Photo Styling */
-.hero-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
 }
 
 .profile-img img {
@@ -136,218 +82,121 @@ body {
     transition: var(--transition);
 }
 
-.profile-img img:hover {
-    transform: scale(1.05);
+/* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 0 10%;
+    margin-bottom: 50px;
 }
-
-/* Buttons Styling */
-.hero-btns {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-
-.btn {
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: 600;
-    transition: var(--transition);
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-}
-
-.btn-outline {
-    background: transparent !important;
-    border: 2px solid white;
-}
-
-.btn-outline:hover {
-    background: white !important;
-    color: var(--dark) !important;
-}
-
 
 .card {
-    border: none;
-    border-bottom: 4px solid var(--primary); /* පහළින් ලස්සන border එකක් */
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    border-bottom: 4px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: var(--transition);
+    color: var(--text-color);
 }
-
-.card h3 {
-    color: var(--dark);
-    font-size: 1.4rem;
-}
-
 
 .card:hover {
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    background: #fff;
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
 
-
-.tech {
-    background: #e1f0fa;
-    color: #3498db;
-    font-weight: 600;
-    padding: 5px 15px;
-}
-
-/* General Section Padding */
-.section-padding {
-    padding: 80px 10%;
-    text-align: center;
-}
-
-.section-title {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    position: relative;
-    display: inline-block;
-}
-
-.section-title::after {
-    content: '';
-    width: 50%;
-    height: 3px;
-    background: #3498db;
-    position: absolute;
-    bottom: -10px;
-    left: 25%;
-}
-
-/* Skills Grid Styling */
+/* Skills Grid */
 .skills-grid {
-    display: flex;        
-    justify-content: center; 
-    flex-wrap: wrap;       
-    gap: 25px;            
-    padding: 20px 0;
-    max-width: 1000px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 40px 10%;
 }
 
 .skill-card {
-    background: #fff;
+    background: var(--card-bg);
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     width: 130px;
     text-align: center;
-    transition: 0.3s;
+    transition: var(--transition);
+    color: var(--text-color);
 }
 
 .skill-card i {
     font-size: 2.5rem;
-    color: #3498db;
+    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
-.skill-card p {
-    font-weight: 600;
-    color: #333;
-}
-
-.skill-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(52, 152, 219, 0.2);
-}
-
-/* Contact Form Styling */
-.contact-wrapper {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
+/* Contact Form */
 .contact-form {
-  display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background: #fff;
+    background: var(--card-bg);
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    color: var(--text-color);
 }
 
-.form-group {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 15px;
-}
-
-/* Mobile එකේදී input fields දෙක එක යට එක පේන්න */
-@media (max-width: 500px) {
-    .form-group {
-        grid-template-columns: 1fr;
-    }
-}
-
-.contact-form input, 
-.contact-form textarea {
-    width: 100%;
-    padding: 15px;
+.contact-form input, .contact-form textarea {
+    background: var(--bg-color);
+    color: var(--text-color);
     border: 1px solid #ddd;
+    padding: 15px;
     border-radius: 10px;
-    background: #f9f9f9;
-    font-size: 1rem;
-    outline: none;
-    transition: 0.3s;
+    margin-bottom: 10px;
 }
 
-.contact-form input:focus, 
-.contact-form textarea:focus {
-    border-color: #3498db;
-    background: #fff;
-}
-
-.btn-submit {
-    background: #3498db;
+/* Buttons */
+.btn-submit, .btn {
+    background: var(--primary-color);
     color: white;
-    padding: 15px 40px;
     border: none;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: 0.3s;
-    width: 100%;
-    margin-top: 10px;
+    font-weight: 600;
+    transition: var(--transition);
 }
 
 .btn-submit:hover {
     background: #2980b9;
-    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+    transform: scale(1.02);
 }
 
-/* Footer styling update */
-footer {
-    background: var(--dark);
-    padding: 40px 0;
-    margin-top: 50px;
+.details-container {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-top: 30px;
 }
 
-:root {
-    --bg-color: #f8f9fa;
-    --text-color: #333;
-    --card-bg: #ffffff;
-    --primary-color: #3498db;
+.feature-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
 }
 
-/* Dark Mode Colors */
-.dark-theme {
-    --bg-color: #121212;
-    --text-color: #e0e0e0;
-    --card-bg: #1e1e1e;
+.feature-item {
+    padding: 20px;
+    transition: var(--transition);
 }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: 0.3s;
+.feature-item i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
 }
 
-.card, .skill-card, .contact-form {
-    background-color: var(--card-bg) !important;
-    color: var(--text-color);
+.feature-item h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.feature-item:hover {
+    transform: scale(1.05);
 }

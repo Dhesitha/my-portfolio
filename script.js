@@ -1,34 +1,44 @@
-// 1. AOS Animation පණ ගැන්වීම (Initialize AOS)
-// මේ කොටස අනිවාර්යයෙන්ම තිබිය යුතුයි Animations පෙනෙන්නට නම්
+// 1. AOS Animation පණ ගැන්වීම
 document.addEventListener('DOMContentLoaded', function() {
-    // AOS library එක load වී ඇති බව තහවුරු කරගැනීම සඳහා CDN එක හරහා script එකක් ඇතුළත් කරමු
     const aosScript = document.createElement('script');
     aosScript.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
     aosScript.onload = function() {
         AOS.init({
-            duration: 1000, // Animation එක තත්පර 1ක් පුරා සිදුවේ
-            once: true,     // scroll කරද්දී එක පාරක් පමණක් පෙන්වයි
-            offset: 100     // animation එක පටන් ගන්න ඕන දුර
-        });
+    duration: 1200,
+    once: false, 
+    mirror: true
+});
     };
     document.head.appendChild(aosScript);
 });
 
-// 2. Dark Mode Toggle වැඩසටහන
+// 2. Dark Mode Toggle (මතකය සහිතව - With LocalStorage)
 const toggleBtn = document.getElementById('dark-mode-toggle');
+const currentTheme = localStorage.getItem('theme');
+
+// කලින් තෝරාගත් Theme එක තිබේ නම් එය සක්‍රීය කිරීම
+if (currentTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+    toggleBtn.classList.replace('fa-moon', 'fa-sun');
+}
+
 if (toggleBtn) {
     toggleBtn.onclick = function() {
         document.body.classList.toggle('dark-theme');
-        // Icon එක මාරු කිරීම (Moon -> Sun)
+        
+        let theme = 'light';
         if (document.body.classList.contains('dark-theme')) {
+            theme = 'dark';
             toggleBtn.classList.replace('fa-moon', 'fa-sun');
         } else {
             toggleBtn.classList.replace('fa-sun', 'fa-moon');
         }
+        // තෝරාගත් Theme එක Browser එකේ මතකයේ තබා ගැනීම
+        localStorage.setItem('theme', theme);
     }
 }
 
-// 3. Go Back වලදී පිටුව Refresh කිරීම (කලින් කතා කළ පරිදි)
+// 3. Go Back වලදී පිටුව Refresh කිරීම
 window.onpageshow = function(event) {
     if (event.persisted) {
         window.location.reload();
