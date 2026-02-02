@@ -13,7 +13,12 @@ hiddenElements.forEach((el) => observer.observe(el));
 
 window.addEventListener('pageshow', function(event) {
     if (event.persisted) {
-       
         window.location.reload();
     }
 });
+
+window.onpageshow = function(event) {
+    if (event.persisted) {
+        window.location.reload();
+    }
+};
