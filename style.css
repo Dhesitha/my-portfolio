@@ -128,3 +128,17 @@ nav ul li a { color: white; text-decoration: none; font-weight: bold; }
 
 .section-padding { padding: 60px 0; text-align: center; }
 .section-title { margin-bottom: 30px; font-size: 2rem; }
+
+/* Swiper Navigation Buttons වල පාට වෙනස් කිරීම */
+.swiper-button-next, .swiper-button-prev {
+    color: var(--primary) !important; /* මේකෙන් Arrows නිල් පාට වෙනවා */
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--primary) !important; /* මේකෙන් Dots නිල් පාට වෙනවා */
+}
+
+.swiper {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
