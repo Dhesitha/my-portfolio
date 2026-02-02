@@ -514,3 +514,70 @@ footer {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(52, 152, 219, 0.4);
 }
+
+/* --- Global Responsive Rules --- */
+
+/* Mobile & Tablet (992px වලට අඩු තිර සඳහා) */
+@media screen and (max-width: 992px) {
+    .section-padding {
+        padding: 60px 20px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Tablets (768px වලට අඩු තිර සඳහා) */
+@media screen and (max-width: 768px) {
+    /* Navbar එක සැඟවීම හෝ සැකසීම */
+    nav ul {
+        display: none; /* පසුව Hamburger menu එකක් මෙතනට දාන්න පුළුවන් */
+    }
+
+    /* Hero Section එකේ අකුරු කුඩා කිරීම */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Grid Layouts එක තීරුවකට (Single Column) ගැනීම */
+    .project-grid, 
+    .project-features-grid, 
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    
+    .timeline::after {
+        left: 31px;
+    }
+    .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    .timeline-container::after {
+        left: 15px;
+    }
+    .right {
+        left: 0%;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        width: 100%; 
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .feature-card, .card {
+        padding: 20px;
+    }
+}
