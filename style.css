@@ -1,182 +1,50 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
 :root {
-    --primary: #3498db;
-    --dark: #2c3e50;
-    --bg: #f8f9fa;
-    --text: #333;
-    --card: #ffffff;
+    --primary: #3498db; --dark: #2c3e50; --bg: #f8f9fa; --text: #333; --card: #ffffff;
 }
 
 .dark-theme {
-    --bg: #121212;
-    --text: #e0e0e0;
-    --card: #1e1e1e;
-    --dark: #000;
+    --bg: #121212; --text: #e0e0e0; --card: #1e1e1e; --dark: #000;
 }
 
-body {
-    background: var(--bg);
-    color: var(--text);
-    transition: 0.3s;
-    overflow-x: hidden;
-}
+body { background: var(--bg); color: var(--text); transition: 0.3s; overflow-x: hidden; }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 10%;
-    background: var(--dark);
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    align-items: center;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.hero {
-    padding: 80px 10%;
-    text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1350&q=80');
-    background-size: cover;
-    color: white;
-}
-
-.profile-img img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 5px solid var(--primary);
-    object-fit: cover;
-}
-
-.section-padding {
-    padding: 60px 10%;
-    text-align: center;
-}
-
-.section-title {
-    margin-bottom: 40px;
-    font-size: 2rem;
-}
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: var(--card);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border-bottom: 4px solid var(--primary);
-    text-align: left;
-}
-
-/* GitHub Stats Fix */
-.github-stats-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.github-stats-container img {
-    height: 140px;
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-/* Swiper Slider Fix */
-.swiper {
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    border-radius: 15px;
-    margin: 40px auto;
-}
-
-.swiper-slide img {
-    width: 100%;
-    height: 350px;
-    object-fit: contain;
-    background: #000;
-    border-radius: 15px;
-}
-
-.skills-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.skill-card {
-    background: var(--card);
-    width: 120px;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.skill-card i {
-    font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 10px;
-}
-
-.contact-form {
-    background: var(--card);
-    padding: 30px;
-    border-radius: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    background: var(--bg);
+/* Dark mode එකේදී අකුරු සුදු වීමට */
+.dark-theme p, .dark-theme h1, .dark-theme h2, .dark-theme h3, .dark-theme h4, .dark-theme .skill-card p {
     color: var(--text);
 }
 
-.btn-submit {
-    background: var(--primary);
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 30px;
-    cursor: pointer;
-    width: 100%;
-    font-weight: bold;
-}
+nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 10%; background: var(--dark); color: white; position: sticky; top: 0; z-index: 1000; }
+nav ul { display: flex; list-style: none; align-items: center; }
+nav ul li { margin-left: 20px; }
+nav ul li a { color: white; text-decoration: none; font-weight: bold; }
+
+.hero { padding: 80px 10%; text-align: center; background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1350&q=80'); background-size: cover; color: white; }
+.profile-img img { width: 150px; height: 150px; border-radius: 50%; border: 5px solid var(--primary); object-fit: cover; }
+
+.section-padding { padding: 60px 10%; text-align: center; }
+.section-title { margin-bottom: 40px; font-size: 2rem; }
+
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 10%; }
+.card { background: var(--card); padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); border-bottom: 4px solid var(--primary); text-align: left; }
+
+.github-stats-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
+.github-stats-container img { height: 140px; max-width: 100%; border-radius: 10px; }
+
+/* Swiper Slider Styling */
+.swiper { width: 100%; max-width: 700px; height: auto; border-radius: 15px; margin: 40px auto; }
+.swiper-slide img { width: 100%; height: 350px; object-fit: contain; background: #000; border-radius: 15px; }
+
+.skills-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+.skill-card { background: var(--card); width: 120px; padding: 20px; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); }
+.skill-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 10px; }
+
+.contact-form { background: var(--card); padding: 30px; border-radius: 20px; max-width: 600px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
+.contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ddd; background: var(--bg); color: var(--text); }
+.btn-submit { background: var(--primary); color: white; border: none; padding: 12px 30px; border-radius: 30px; cursor: pointer; width: 100%; font-weight: bold; }
+footer { padding: 20px; text-align: center; background: var(--dark); color: white; }
+
+.btn { display: inline-block; padding: 10px 20px; background: var(--primary); color: white; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+.btn-outline { background: transparent; border: 2px solid white; margin-left: 10px; }
+.hero h1 span { color: var(--primary); }
